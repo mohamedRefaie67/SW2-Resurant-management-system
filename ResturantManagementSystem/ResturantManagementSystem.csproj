@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2069692-F8D5-448B-AAA1-4F9C5953EFA6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ResturantManagementSystem</RootNamespace>
+    <AssemblyName>ResturantManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="RJCodeAdvance.RJControls">
+      <HintPath>..\..\..\..\Downloads\RJCodeAdvance.RJControls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Gui_Dashboards\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui_Dashboards\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui_Dashboards\CasherDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui_Dashboards\CasherDashboard.Designer.cs">
+      <DependentUpon>CasherDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui_Dashboards\ManagerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui_Dashboards\ManagerDashboard.Designer.cs">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gui_Dashboards\LogInDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui_Dashboards\LogInDashboard.Designer.cs">
+      <DependentUpon>LogInDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OOP_Classes\DataBaseConnection.cs" />
+    <Compile Include="OOP_Classes\DataBaseReadWrite.cs" />
+    <Compile Include="OOP_Classes\DataBaseRefresh.cs" />
+    <Compile Include="OOP_Classes\Files.cs" />
+    <Compile Include="OOP_Classes\Meals.cs" />
+    <Compile Include="OOP_Classes\OrdersAndInvoices.cs" />
+    <Compile Include="OOP_Classes\Reports.cs" />
+    <Compile Include="OOP_Classes\StaffLogs.cs" />
+    <Compile Include="OOP_Classes\StoresChanges.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Gui_Dashboards\StockDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui_Dashboards\StockDashboard.Designer.cs">
+      <DependentUpon>StockDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantDataSet2.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Gui_Dashboards\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui_Dashboards\CasherDashboard.resx">
+      <DependentUpon>CasherDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui_Dashboards\ManagerDashboard.resx">
+      <DependentUpon>ManagerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui_Dashboards\LogInDashboard.resx">
+      <DependentUpon>LogInDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Gui_Dashboards\StockDashboard.resx">
+      <DependentUpon>StockDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ResturantDataSet.xsc">
+      <DependentUpon>ResturantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ResturantDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResturantDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResturantDataSet.xss">
+      <DependentUpon>ResturantDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ResturantDataSet1.xsc">
+      <DependentUpon>ResturantDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ResturantDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResturantDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResturantDataSet1.xss">
+      <DependentUpon>ResturantDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ResturantDataSet2.xsc">
+      <DependentUpon>ResturantDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ResturantDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ResturantDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ResturantDataSet2.xss">
+      <DependentUpon>ResturantDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="webfonts\fa-brands-400.eot" />
+    <None Include="webfonts\fa-brands-400.ttf" />
+    <None Include="webfonts\fa-brands-400.woff" />
+    <None Include="webfonts\fa-brands-400.woff2" />
+    <None Include="webfonts\fa-regular-400.eot" />
+    <None Include="webfonts\fa-regular-400.ttf" />
+    <None Include="webfonts\fa-regular-400.woff" />
+    <None Include="webfonts\fa-regular-400.woff2" />
+    <None Include="webfonts\fa-solid-900.eot" />
+    <None Include="webfonts\fa-solid-900.ttf" />
+    <None Include="webfonts\fa-solid-900.woff" />
+    <None Include="webfonts\fa-solid-900.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\6958206-burgers-pizza-and-soda-sandwich-fast-food.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-person-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-panel-texture-material-wallpaper-preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_454099801_32LqElT2W1vgRQ6YRsp3h2IsKQxTCnaG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-username-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-username-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-forgot-password-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\istockphoto-1150477705-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abstract-panel-texture-material-wallpaper-preview1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-employee-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reports-58.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-reports-45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-composing-mail-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-restaurant-menu-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-logout-45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <None Include="Resources\icons8-subtract-40.png" />
+    <None Include="Resources\icons8-maximizing-pop-up-window-box-under-web-page-builder-30.png" />
+    <None Include="Resources\icons8-maximizing-pop-up-window-box-under-web-page-builder-40.png" />
+    <None Include="Resources\icons8-x-401.png" />
+    <None Include="Resources\icons8-x-40.png" />
+    <None Include="Resources\icons8-logout-rounded-left-40.png" />
+    <None Include="Resources\icons8-restaurant-menu-40.png" />
+    <None Include="Resources\icons8-edit-mailbox-40.png" />
+    <None Include="Resources\icons8-report-card-40.png" />
+    <None Include="Resources\icons8-report-card-50.png" />
+    <None Include="Resources\icons8-employee-50 %281%29.png" />
+    <None Include="Resources\WhatsApp Image 2022-04-22 at 3.49.24 AM.jpeg" />
+    <None Include="Resources\icons8-close-50.png" />
+    <None Include="Resources\icons8-maximize-window-45.png" />
+    <None Include="Resources\icons8-maximize-window-64.png" />
+    <None Include="Resources\icons8-subtract-48.png" />
+    <None Include="Resources\icons8-request-40.png" />
+    <None Include="Resources\icons8-order-40.png" />
+    <None Include="Resources\icons8-stock-40.png" />
+    <None Include="Resources\icons8-mail-40.png" />
+    <None Include="Resources\icons8-supplier-40.png" />
+    <None Include="Resources\icons8-scan-stock-40.png" />
+    <None Include="Resources\Screenshot 2022-04-22 034435.png" />
+    <None Include="Resources\Screenshot 2022-04-22 0344351.png" />
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Invoices\" />
+    <Folder Include="Reports\Casher_Admin_Report\" />
+    <Folder Include="Reports\Casher_Stock_Report\" />
+    <Folder Include="Reports\Order_Admin_Report\" />
+    <Folder Include="Reports\Staff_Admin_Report\" />
+    <Folder Include="Reports\Stock_Admin_Report\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
