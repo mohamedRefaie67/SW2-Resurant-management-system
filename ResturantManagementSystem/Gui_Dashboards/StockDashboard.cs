@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ResturantManagementSystem.Gui_Dashboards.StockmanDashbourdPanel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ResturantManagementSystem.OOP_Classes;
 
 namespace ResturantManagementSystem
 {
@@ -23,6 +23,7 @@ namespace ResturantManagementSystem
             this.Text = String.Empty;
             this.ControlBox = false;
             this.DoubleBuffered = true;
+
 
         }
 
@@ -89,11 +90,24 @@ namespace ResturantManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-        }
+            loadForm(new requestPanel());
 
+        }
+        public void loadForm(object sender)
+        {
+            if (this.DashbourdMiddle.Controls.Count > 0)
+            {
+                this.DashbourdMiddle.Controls.RemoveAt(0);
+            }
+            Form f = sender as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.DashbourdMiddle.Controls.Add(f);
+            this.DashbourdMiddle.Tag = f;
+            f.Show();
+        }
         private void stockmanDashboard_Load(object sender, EventArgs e)
         {
-
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -126,11 +140,13 @@ namespace ResturantManagementSystem
         private void button2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            loadForm(new stockPanel());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            loadForm(new suppliersPanel());
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -144,6 +160,11 @@ namespace ResturantManagementSystem
             this.Hide();
             l.ShowDialog();
             this.Close();
+        }
+
+        private void DashbourdMiddle_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -7,26 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ResturantManagementSystem.OOP_Classes;
 using System.Data.SqlClient;
-
+using ResturantManagementSystem.OOP_Classes;
+using ResturantManagementSystem.OOP_Classes.DataBaseHandel;
 
 namespace ResturantManagementSystem
 {
     public partial class LogInDashboard : Form
     {
+        DataBaseConnection ConnectDataBase = new DataBaseConnection();
+      
+        
+        SqlConnection Connection = new SqlConnection();
         ManagerDashboard Manager = new ManagerDashboard();
-        AdminDashboard Admin = new AdminDashboard();
+     
         StockDashboard Stock = new StockDashboard();
         CasherDashboard Casher = new CasherDashboard();
-        private SqlConnection conn;
-        private int Jop;
-        DataBaseConnection Connection = new DataBaseConnection();
+       
+
         public LogInDashboard()
         {
+          
             InitializeComponent();
-          conn = Connection.DbConnection();
-            
+            Connection = ConnectDataBase.openConnection();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -57,39 +61,80 @@ namespace ResturantManagementSystem
         private void LoginButton_Click(object sender, EventArgs e)
         {
 
-            StaffLogs Staff = new StaffLogs();
-            Jop =  Staff.login(conn , UserName.Text,Password.Text);
-            if (Jop == 0)
+       
+           try
             {
-                MessageBox.Show("                            Try Again !!\nNote: UserName or Password is incorrect");
-            }
-            else if (Jop == 1)
-            {
-                this.Visible =  false;
-                Manager.Visible = true;
+                if( LogsDataBase.login(Connection, UserName.Text, Password.Text))
+                {
+                    if( LogsDataBase.employeeJop.Equals("Manager"))
+                    {
+                        this.Visible = false;
+                        EmployeeDataBase employeeDataBaseHandel = new EmployeeDataBase( LogsDataBase.employeeId);
+                        LogsDataBase.setEmployeeShift(Connection,  LogsDataBase.employeeId);
+                        employeeDataBaseHandel.setEmployeeData(Connection,  LogsDataBase.username,  LogsDataBase.password,  LogsDataBase.employeeJop);
+                        LogsDataBase.saveInLoginTable(Connection, employeeDataBaseHandel.UserId,employeeDataBaseHandel.Jop, employeeDataBaseHandel.Shift);
+                        Manager.Visible = true;
+                        EmployeeDataBase.EmployeeIdInSession = LogsDataBase.employeeId;
 
-            }else if(Jop == 2)
-            {
-                this.Visible = false;
-                Admin.Visible = true;
-            }
-            else if (Jop == 3)
-            {
-                this.Visible = false;
-                Casher.Visible = true;
-            }
-            else if (Jop == 4)
-            {
-                this.Visible = false;
-                Stock.Visible = true;
-            }
-            else if (Jop == 5)
-            {
-                MessageBox.Show("Done");
-            }
- /*---------------------------------------------------------------------*/
 
-            
+                    }
+
+                    else if ( LogsDataBase.employeeJop.Equals("StockKeeper"))
+                    {
+                        EmployeeDataBase employeeDataBaseHandel = new EmployeeDataBase(LogsDataBase.employeeId);
+                        KitchenAndStockReports kitchenAndStockReports = new KitchenAndStockReports();
+                        LogsDataBase.setEmployeeShift(Connection, LogsDataBase.employeeId);
+                        employeeDataBaseHandel.setEmployeeData(Connection, LogsDataBase.username, LogsDataBase.password, LogsDataBase.employeeJop);
+                        LogsDataBase.saveInLoginTable(Connection, employeeDataBaseHandel.UserId, employeeDataBaseHandel.Jop, employeeDataBaseHandel.Shift);
+                        this.Visible = false;
+                        Stock.Visible = true;
+                        EmployeeDataBase.EmployeeIdInSession = LogsDataBase.employeeId;
+                        kitchenAndStockReports.createstockReport(Connection);
+
+
+
+                    }
+                    else if ( LogsDataBase.employeeJop.Equals("Casher"))
+                    {
+                        EmployeeDataBase employeeDataBaseHandel = new EmployeeDataBase(LogsDataBase.employeeId);
+                        KitchenAndStockReports kitchenAndStockReports = new KitchenAndStockReports();
+                        LogsDataBase.setEmployeeShift(Connection, LogsDataBase.employeeId);
+                        employeeDataBaseHandel.setEmployeeData(Connection, LogsDataBase.username, LogsDataBase.password, LogsDataBase.employeeJop);
+                        LogsDataBase.saveInLoginTable(Connection, employeeDataBaseHandel.UserId, employeeDataBaseHandel.Jop, employeeDataBaseHandel.Shift);
+                        this.Visible = false;
+                        Casher.Visible = true;
+                        EmployeeDataBase.EmployeeIdInSession = LogsDataBase.employeeId;
+                        kitchenAndStockReports.createKitchenReport(Connection);
+
+
+
+
+                    }
+                    else if ( LogsDataBase.employeeJop.Equals("Staff"))
+                    {
+                        EmployeeDataBase employeeDataBaseHandel = new EmployeeDataBase(LogsDataBase.employeeId);
+                        LogsDataBase.setEmployeeShift(Connection, LogsDataBase.employeeId);
+                        employeeDataBaseHandel.setEmployeeData(Connection, LogsDataBase.username, LogsDataBase.password, LogsDataBase.employeeJop);
+                        LogsDataBase.saveInLoginTable(Connection, employeeDataBaseHandel.UserId, employeeDataBaseHandel.Jop, employeeDataBaseHandel.Shift);
+                        MessageBox.Show("LOG AT Time" + DateTime.Now +"\n"+ employeeDataBaseHandel.UserName);
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("UserName Or Password Is Wrong !!", "Error", MessageBoxButtons.OK);
+                   
+                }
+                    
+            }
+            catch(SqlException exeption)
+            {
+                MessageBox.Show(exeption.ToString());
+            }
+          
+
         }
+
+       
     }
 }

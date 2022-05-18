@@ -16,8 +16,9 @@ namespace ResturantManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LogInDashboard());
-            Application.Run(new ManagerDashboard());
+            Application.Run(new LogInDashboard());
+             //Application.Run(new StockDashboard());
+            //Application.Run(new CasherDashboard());
 
         }
     }

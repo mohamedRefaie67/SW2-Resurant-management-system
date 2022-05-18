@@ -61,9 +61,9 @@
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(212, 550);
+            this.panelMenu.Size = new System.Drawing.Size(212, 1020);
             this.panelMenu.TabIndex = 0;
             // 
             // button5
@@ -76,8 +76,8 @@
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::ResturantManagementSystem.Properties.Resources.icons8_logout_rounded_left_40;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 477);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(0, 947);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(212, 73);
@@ -96,7 +96,7 @@
             this.button3.Image = global::ResturantManagementSystem.Properties.Resources.icons8_supplier_40;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(2, 278);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(207, 73);
@@ -115,7 +115,7 @@
             this.button2.Image = global::ResturantManagementSystem.Properties.Resources.icons8_scan_stock_40;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(2, 205);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(207, 73);
@@ -134,7 +134,7 @@
             this.button1.Image = global::ResturantManagementSystem.Properties.Resources.icons8_request_40;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(2, 132);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(9, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(207, 73);
@@ -149,7 +149,7 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(212, 132);
             this.panel1.TabIndex = 0;
@@ -158,7 +158,7 @@
             // 
             this.pictureBox2.Image = global::ResturantManagementSystem.Properties.Resources.WhatsApp_Image_2022_04_22_at_3_49_24_AM;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(209, 127);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -183,9 +183,9 @@
             this.panel2.Controls.Add(this.btnClose);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(212, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(522, 33);
+            this.panel2.Size = new System.Drawing.Size(1728, 33);
             this.panel2.TabIndex = 1;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -197,8 +197,8 @@
             this.btnMinimized.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimized.ForeColor = System.Drawing.Color.White;
             this.btnMinimized.Image = global::ResturantManagementSystem.Properties.Resources.icons8_subtract_40;
-            this.btnMinimized.Location = new System.Drawing.Point(443, 2);
-            this.btnMinimized.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimized.Location = new System.Drawing.Point(1649, 2);
+            this.btnMinimized.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(22, 24);
             this.btnMinimized.TabIndex = 2;
@@ -213,8 +213,8 @@
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
             this.btnMaximize.Image = global::ResturantManagementSystem.Properties.Resources.icons8_maximizing_pop_up_window_box_under_web_page_builder_30;
-            this.btnMaximize.Location = new System.Drawing.Point(470, 2);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMaximize.Location = new System.Drawing.Point(1676, 2);
+            this.btnMaximize.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(22, 24);
             this.btnMaximize.TabIndex = 1;
@@ -229,8 +229,8 @@
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::ResturantManagementSystem.Properties.Resources.icons8_x_401;
-            this.btnClose.Location = new System.Drawing.Point(497, 2);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClose.Location = new System.Drawing.Point(1703, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(22, 24);
             this.btnClose.TabIndex = 0;
@@ -244,16 +244,17 @@
             this.DashbourdMiddle.Controls.Add(this.pictureBox1);
             this.DashbourdMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DashbourdMiddle.Location = new System.Drawing.Point(212, 33);
-            this.DashbourdMiddle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashbourdMiddle.Margin = new System.Windows.Forms.Padding(2);
             this.DashbourdMiddle.Name = "DashbourdMiddle";
-            this.DashbourdMiddle.Size = new System.Drawing.Size(522, 517);
+            this.DashbourdMiddle.Size = new System.Drawing.Size(1728, 987);
             this.DashbourdMiddle.TabIndex = 2;
+            this.DashbourdMiddle.Paint += new System.Windows.Forms.PaintEventHandler(this.DashbourdMiddle_Paint);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ResturantManagementSystem.Properties.Resources.WhatsApp_Image_2022_04_22_at_3_49_24_AM;
             this.pictureBox1.Location = new System.Drawing.Point(69, 191);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(396, 324);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -264,13 +265,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 550);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1940, 1020);
             this.Controls.Add(this.DashbourdMiddle);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "StockDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "stockmanDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.stockmanDashboard_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
